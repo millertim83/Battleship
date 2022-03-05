@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/timothyr.miller/Projects/Battleship.cs/Battleship.cs/Battleship.cs.csproj",
+      "projectUniqueName": "/Users/timothyr.miller/Desktop/projects/Battleship.cs/Battleship.cs.csproj",
       "projectName": "Battleship.cs",
-      "projectPath": "/Users/timothyr.miller/Projects/Battleship.cs/Battleship.cs/Battleship.cs.csproj",
+      "projectPath": "/Users/timothyr.miller/Desktop/projects/Battleship.cs/Battleship.cs.csproj",
       "packagesPath": "/Users/timothyr.miller/.nuget/packages/",
-      "outputPath": "/Users/timothyr.miller/Projects/Battleship.cs/Battleship.cs/obj/",
+      "outputPath": "/Users/timothyr.miller/Desktop/projects/Battleship.cs/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/timothyr.miller/.config/NuGet/NuGet.Config"
