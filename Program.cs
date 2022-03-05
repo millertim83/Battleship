@@ -8,8 +8,7 @@ namespace Battleship.cs
         static void Main(string[] args)
         {
             playGame();
-            //string[] randomShipCoordinates = new string[5];
-            //randomShipCoordinates = generateRandomShipLocation();
+        
 
             static void playGame()
             {
