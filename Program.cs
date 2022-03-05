@@ -9,7 +9,6 @@ namespace Battleship.cs
         {
             playGame();
         
-
             static void playGame()
             {
                 Console.WriteLine("Welcome to Battleship!\n" +
@@ -26,15 +25,9 @@ namespace Battleship.cs
                 List<string> hits = new List<string>();
                 string[] randomShipCoordinates = new string[5];
                 randomShipCoordinates = generateRandomShipLocation();
-                //Print coordinates
-                for (int j = 0; j < 5; j++)
-                {
-                    Console.WriteLine(randomShipCoordinates[j]);
-                }
-
+            
                 while (userGuesses > 0 && shipRemaining > 0)
                 {
-                    //bool isHit = true;
                     Console.WriteLine("Enter your attack coordinates!");
                     string attackCoordinates = Console.ReadLine();
                     if (validateFormat(attackCoordinates) == false)
@@ -48,20 +41,12 @@ namespace Battleship.cs
                         continue;
                     }
                     userGuesses -= 1;
-                    //string convertedCoordinates = convertUserGuess(attackCoordinates);
-                    //for (int i = 0; i < 5; i++)
-                    //{
-                    ///    if (attackCoordinates == randomShipCoordinates[i])
-                    //    {
-                    //        isHit = true;
-                    //    }
-                    //}
+
                     if (attackCoordinates == randomShipCoordinates[0] ||
                         attackCoordinates == randomShipCoordinates[1] ||
                         attackCoordinates == randomShipCoordinates[2] ||
                         attackCoordinates == randomShipCoordinates[3] ||
-                        attackCoordinates == randomShipCoordinates[4]
-                        )
+                        attackCoordinates == randomShipCoordinates[4])
                     {
                         shipRemaining -= 1;
                         hits.Add($"{attackCoordinates}");
@@ -136,15 +121,9 @@ namespace Battleship.cs
                                 misses.Clear();
                                 hits.Clear();
                                 randomShipCoordinates = generateRandomShipLocation();
-                                //for loop here just to confirm ship location is being re-generated.  delete later
-                                for (int j = 0; j < 5; j++)
-                                {
-                                    Console.WriteLine(randomShipCoordinates[j]);
-                                }
                             }
                         }
                     }
-
                 }
             }
 

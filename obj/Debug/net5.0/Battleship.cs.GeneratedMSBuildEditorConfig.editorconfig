@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Battleship.cs
-build_property.ProjectDir = /Users/timothyr.miller/Projects/Battleship.cs/Battleship.cs/
+build_property.ProjectDir = /Users/timothyr.miller/Desktop/projects/Battleship.cs/
