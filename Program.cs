@@ -7,6 +7,29 @@ namespace Battleship.cs
     {
         static void Main(string[] args)
         {
+            string[,] gameCanvas = new string[,]
+               {
+                    { " -", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" },
+                    { " 1", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 2", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 3", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 4", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 5", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 6", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 7", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 8", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { " 9", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
+                    { "10", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" }
+               };
+            //code below prints array to console
+            for (int i = 0; i < gameCanvas.GetLength(0); i++)
+            {
+                for (int j = 0; j < gameCanvas.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", gameCanvas[i, j]);
+                }
+                Console.WriteLine();            }
+
             playGame();
         
             static void playGame()
@@ -25,6 +48,11 @@ namespace Battleship.cs
                 List<string> hits = new List<string>();
                 string[] randomShipCoordinates = new string[5];
                 randomShipCoordinates = generateRandomShipLocation();
+
+                for (int i = 0; i < 5; i ++)
+                {
+                    Console.WriteLine(randomShipCoordinates[i]);
+                }
             
                 while (userGuesses > 0 && shipRemaining > 0)
                 {
@@ -52,6 +80,8 @@ namespace Battleship.cs
                         hits.Add($"{attackCoordinates}");
                         if (userGuesses > 0 && shipRemaining == 0)
                         {
+                            
+                           
                             Console.WriteLine("You have destroyed the battleship!  You win!");
                             Console.WriteLine("Type 'y' and hit Enter to start a new game!");
                             string restart = Console.ReadLine();
@@ -175,6 +205,56 @@ namespace Battleship.cs
                     return shipCoordinates;
                 }
             }
+
+            static int[] convertUserGuess(string guess)
+            {
+
+                // Examples of user guess - gameCanvas => 1-8 - [8,1]; 4-5 - [5,4]
+                string[] convertedAttackLocation = guess.Split("-");
+                int[] convertedCoordinates = new int[2];
+                int yCoordinate = int.Parse(convertedAttackLocation[1]);
+                string xCoordinate = convertedAttackLocation[0];
+                int convertedX = 1;
+                //Need to use implement loop for if statements - went with what I knew would work
+                if (xCoordinate == "a" || xCoordinate =="A")
+                {
+                    convertedX = 1;   
+                } else if (xCoordinate == "b" || xCoordinate == "B")
+                {
+                    convertedX = 2;
+                } else if (xCoordinate == "c" || xCoordinate == "C")
+                {
+                    convertedX = 3;
+                } else if (xCoordinate == "d" || xCoordinate == "D")
+                {
+                    convertedX = 4;
+                } else if (xCoordinate == "e" || xCoordinate == "E")
+                {
+                    convertedX = 5;
+                } else if (xCoordinate == "f" || xCoordinate == "F")
+                {
+                    convertedX = 6;
+                } else if (xCoordinate == "g" || xCoordinate == "G")
+                {
+                    convertedX = 7;
+                } else if (xCoordinate == "h" || xCoordinate == "H")
+                {
+                    convertedX = 8;
+                } else if (xCoordinate == "i" || xCoordinate == "I")
+                {
+                    convertedX = 9;
+                } else if (xCoordinate == "j" || xCoordinate == "J")
+                {
+                    convertedX = 10;
+                }
+                convertedCoordinates[0] = yCoordinate;
+                convertedCoordinates[1] = convertedX;
+                return convertedCoordinates;
+                //string modifiedUserGuess = ($"{yCoordinate}-{xCoordinate}");
+                //return modifiedUserGuess;
+
+            }
+
 
         }
     }
