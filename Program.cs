@@ -8,7 +8,7 @@ namespace Battleship.cs
         static void Main(string[] args)
         {
             string[,] gameCanvas = new string[,]
-               {
+            {
                     { " -", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" },
                     { " 1", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
                     { " 2", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
@@ -20,7 +20,7 @@ namespace Battleship.cs
                     { " 8", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
                     { " 9", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" },
                     { "10", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" }
-               };
+            }
             //code below prints array to console
             for (int i = 0; i < gameCanvas.GetLength(0); i++)
             {
@@ -28,10 +28,13 @@ namespace Battleship.cs
                 {
                     Console.Write("{0} ", gameCanvas[i, j]);
                 }
-                Console.WriteLine();            }
+                Console.WriteLine();
+            }
 
-            playGame();
-        
+            Console.WriteLine(gameCanvas[4, 4]);
+
+            
+        /*
             static void playGame()
             {
                 Console.WriteLine("Welcome to Battleship!\n" +
@@ -156,6 +159,28 @@ namespace Battleship.cs
                     }
                 }
             }
+        */
+        /*
+            static bool validateFormat(string userGuess)
+            {
+                bool containsHyphen = userGuess.Contains("-");
+                if (containsHyphen)
+                {
+                    string[] parseUserGuess = userGuess.Split("-");
+                    int xCoord;
+                    int yCoord;
+                    bool validX = int.TryParse((parseUserGuess[0]), out xCoord);
+                    bool validY = int.TryParse((parseUserGuess[1]), out yCoord);
+                    if (validX == true && validY == true && xCoord > 0 && xCoord < 11 && yCoord > 0 && yCoord < 11)
+                    {
+                        return true;
+                    }
+                    else return false;
+
+                }
+                else return false;
+            }
+        */
 
             static bool validateFormat(string userGuess)
             {

@@ -1,9 +1,6 @@
 ﻿<Properties StartupConfiguration="{D8F61789-AFE2-4174-AEA1-453109507371}|Default">
   <MonoDevelop.Ide.ItemProperties.Battleship.cs PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
-    <Files>
-      <File FileName="Program.cs" Line="252" Column="45" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
